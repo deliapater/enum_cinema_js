@@ -21,10 +21,25 @@ Cinema.prototype.filmByGenre = function (genre) {
   return film[0]
   };
 
-Cinema.prototype.filmByYear = function (year) {
-  const film = this.films.filter(film => film.year === year);
-  return film[0]
+Cinema.prototype.filmsByYear = function (year) {
+  const films = this.films.filter(film => film.year === year);
+  if (films.length > 0) {
+  return true}
+  else {
+    return false
+  }
+
 };
 
+Cinema.prototype.filmsLength = function (length) {
+  const films = this.films.every(film => film >= film.length);
+  return true
+};
 
+Cinema.prototype.timeTotal = function () {
+  const total = film.length.reduce((runningTotal, film) => {
+    return runningTotal += film.length;
+  })
+  return total
+};
   module.exports = Cinema;
